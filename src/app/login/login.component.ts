@@ -3,8 +3,10 @@ import {
   FormBuilder,
   FormGroup,
   Validators,
-  ReactiveFormsModule 
+  ReactiveFormsModule
 } from '@angular/forms';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,19 +18,23 @@ export class LoginComponent implements OnInit {
 
   submitForm(): void {
     for (const i in this.validateForm.controls) {
-      this.validateForm.controls[ i ].markAsDirty();
-      this.validateForm.controls[ i ].updateValueAndValidity();
+      this.validateForm.controls[i].markAsDirty();
+      this.validateForm.controls[i].updateValueAndValidity();
     }
+    this.router.navigate(['/home']);
+
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private router: Router
+    ) {
   }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
-      userName: [ null, [ Validators.required ] ],
-      password: [ null, [ Validators.required ] ],
-      remember: [ true ]
+      userName: [null, [Validators.required]],
+      password: [null, [Validators.required]],
+      remember: [true]
     });
   }
 }
