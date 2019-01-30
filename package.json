@@ -2,7 +2,7 @@
   "name": "project-name",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
+    "ng": "ng serve --port 0 --open",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -20,7 +20,9 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
     "less": "^2.7.2",
+    "mockjs": "^1.0.1-beta3",
     "ng-zorro-antd": "^7.0.0-rc.3",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
